@@ -4,6 +4,6 @@ class App < Sinatra::Base
   set :public, File.dirname(__FILE__) + '/static'
 
   get '/' do
-    "Hola Mundo"
+    erb :'hello-world'
   end
 end

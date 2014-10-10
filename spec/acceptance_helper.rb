@@ -5,7 +5,7 @@ disable :run
 require 'capybara'
 require 'capybara/dsl'
 
-Capybara.app = Sinatra::Application
+Capybara.app = App
 
 RSpec.configure do |config|
   config.include Capybara::DSL

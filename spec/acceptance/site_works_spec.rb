@@ -1,8 +1,9 @@
 require File.dirname(__FILE__) + '/../acceptance_helper'
 
 describe 'URLs that require login' do  
-  context 'the /mystore URL' do
+  context 'basic site' do
     before :each do
+      Capybara.current_driver = :selenium
       visit '/'
     end
 
@@ -20,6 +21,10 @@ describe 'URLs that require login' do
 #      visit '/mystore'
 #      selector('#already-have-account').should be_nil
        expect(page).to have_content '115'
+    end
+
+    after(:all) do
+      Capybara.use_default_driver
     end
   end
 end

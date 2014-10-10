@@ -33,3 +33,4 @@ end
 def selector string
   find :css, string
 end
+

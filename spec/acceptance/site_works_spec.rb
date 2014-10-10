@@ -23,6 +23,13 @@ describe 'URLs that require login' do
        expect(page).to have_content '115'
     end
 
+    it "can sum two numbers" do
+       fill_in 'operator1', with: '58'
+       fill_in 'operator2', with: '11'
+       click_button 'Sum'
+       expect(selector('#result')).to have_content '69'
+    end
+
     after(:all) do
       Capybara.use_default_driver
     end

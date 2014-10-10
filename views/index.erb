@@ -3,9 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <script src="js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
- <h1>Hello World</h1>
- <script type="text/javascript">document.write(100 + 15);</script>
+  <h1>Hello World</h1>
+  <form id="calculator">
+    <input id="operator1" type="number" value="0"> + <input id="operator2" type="number" value="0">
+    <button id="sum" type="submit">Sum</button>
+  </form>
+  <div id="result"></div>
+  <script type="text/javascript">document.write(100 + 15);</script>
+  <script>
+    $(function () {
+        $("#calculator").submit(function (e) {
+          var op1 = $("#operator1").val(),
+              op2 = $("#operator2").val();
+
+          $("#result").text(parseInt(op1,10) + parseInt(op2, 10));
+
+          e.preventDefault();
+        });
+    });
+  </script>
+
 </body>
 </html>

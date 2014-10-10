@@ -1,9 +1,10 @@
+require 'sinatra'
 
 class App < Sinatra::Base
   set :static, true
-  set :public, File.dirname(__FILE__) + '/static'
+  set :public_folder, File.dirname(__FILE__) + '/static'
 
   get '/' do
-    erb :'hello-world'
+    erb :index
   end
 end
